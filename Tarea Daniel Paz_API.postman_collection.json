@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "736019e8-cd6b-4931-b7f2-f75de094ff71",
+		"name": "Tarea API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46452336",
+		"_collection_link": "https://daniel-6752054.postman.co/workspace/Daniel's-Workspace~9786ea9b-e60f-43a6-8298-a737d4443305/collection/46452336-736019e8-cd6b-4931-b7f2-f75de094ff71?action=share&source=collection_link&creator=46452336"
+	},
+	"item": [
+		{
+			"name": "01. Login Usuario Tester",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"testeradl@test.com\",\r\n  \"password\": \"Tester@2025\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{basrUrlTarea}}/api/login",
+					"host": [
+						"{{basrUrlTarea}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02. Consultar Clientes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api-tester-adl.leonardojose.dev/api/clients",
+					"protocol": "https",
+					"host": [
+						"api-tester-adl",
+						"leonardojose",
+						"dev"
+					],
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03. Registro de Nuevo Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10924|KYr10iIG85vg7fFXwUDsDhcYXyxSGlk5Rl43428t7df25f1b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"Daniel Paz\",\r\n  \"cuit\": \"144157683\",\r\n  \"email\": \"daniel.paz@example.com\",\r\n  \"phone\": \"+56 9 11 7654-3210\",\r\n  \"address\": \"Av. Libertador 7890, Concepción, Chile\",\r\n  \"balance\": 12000.00,\r\n  \"is_active\": true\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-tester-adl.leonardojose.dev/api/clients",
+					"protocol": "https",
+					"host": [
+						"api-tester-adl",
+						"leonardojose",
+						"dev"
+					],
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04 Actualizar Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10924|KYr10iIG85vg7fFXwUDsDhcYXyxSGlk5Rl43428t7df25f1b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 123,\r\n  \"name\": \"Daniel Paz Ronaldinho\",\r\n  \"cuit\": \"144157683\",\r\n  \"email\": \"daniel.paz@example.com\",\r\n  \"phone\": \"+56 9 11 7654-3210\",\r\n  \"address\": \"Av. Libertador 7890, Concepción, Chile\",\r\n  \"balance\": 12000.00,\r\n  \"is_active\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api-tester-adl.leonardojose.dev/api/clients",
+					"protocol": "https",
+					"host": [
+						"api-tester-adl",
+						"leonardojose",
+						"dev"
+					],
+					"path": [
+						"api",
+						"clients"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05 Borrar Cliente",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "10924|KYr10iIG85vg7fFXwUDsDhcYXyxSGlk5Rl43428t7df25f1b",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api-tester-adl.leonardojose.dev/api/clients/1042",
+					"protocol": "https",
+					"host": [
+						"api-tester-adl",
+						"leonardojose",
+						"dev"
+					],
+					"path": [
+						"api",
+						"clients",
+						"1042"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "urlTarea",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
